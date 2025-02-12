@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8d7da;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #e7a6a1;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Will you be my Valentine's, Miss Beautiful Rhonna?</h1>
+        
+        <!-- Buttons for Yes or Yes -->
+        <button onclick="response('Yes')">Yes</button>
+        <button onclick="response('Yes')">Yes</button>
+
+        <!-- Input box for custom response -->
+        <div class="response">
+            <h3>Enter your response and click submit:</h3>
+            <input type="text" id="customResponse" placeholder="Enter your answer here">
+            <button onclick="submitAnswer()">Submit</button>
+        </div>
+
+        <!-- Reminder text -->
+        <p>Please remember to fill out the form at the link after submitting your response.</p>
+        
+        <!-- Display the response -->
+        <p id="displayResponse"></p>
+    </div>
+
+    <script>
+        function response(answer) {
+            document.getElementById("displayResponse").textContent = "You chose: " + answer;
+        }
+
+        function submitAnswer() {
+            var customResponse = document.getElementById("customResponse").value;
+            if (customResponse) {
+                document.getElementById("displayResponse").textContent = "Your custom answer: " + customResponse;
+                // Redirect to the Google Drive link after submitting the response
+                setTimeout(function() {
+                    window.location.href = "https://drive.google.com/drive/folders/1Fc7DZyYDZ6ZsR9zlE9Z6_e4rKUqv83gl";
+                }, 1000);  // Wait 1 second before redirecting
+            } else {
+                alert("Please enter a response!");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
